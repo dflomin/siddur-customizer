@@ -1,0 +1,147 @@
+.book-content {
+	display: none;
+}
+
+.book-container {
+	position: relative;
+}
+
+.book-preview {
+	width: 11.2in;
+	overflow: hidden;
+	height: 7in;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.book-sections {
+	vertical-align: top;
+	display: inline-block;
+	width: 200px;
+	background: #efefef;
+	height: 7in;
+}
+
+.pagedjs_pages {
+	position: relative;
+	width: 100%;
+}
+
+.pagedjs_page {
+	background: #efefef;
+	margin-bottom: 15px;
+	position: absolute;
+	opacity: 0;
+}
+
+.pagedjs_right_page {
+	right: 0;
+}
+
+.pagedjs_left_page {
+	left: 0;
+}
+
+.pagedjs_page.active {
+	opacity: 1;
+	transition: 0.5s opacity;
+	z-index: 1;
+}
+
+.loader {
+	display: none;
+	z-index: 10;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 150px;
+	margin-left: -75px;
+	margin-top: -10px;
+}
+
+.loader::after {
+	content: "Loading...";
+	font-size: 20px;
+}
+
+.loader::before {
+	content: "";
+	display: block;
+	height: 3px;
+	width: 100%;
+}
+
+.text-controls-container {
+	display: none;
+  position: absolute;
+  width: 200px;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  z-index: 5;
+}
+
+.text-controls-container input[type="checkbox"] {
+  display: none;
+}
+
+.text-controls-container .bold-toggle {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  background: #efefef;
+  padding: 3px 6px;
+  border: 1px solid #a0a0a0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.text-controls-container .bold-toggle.active {
+  background: #a0a0a0;
+  color: #efefef;
+  border-color: #333333;
+}
+
+#book-control-font-size {
+  width: 40px;
+}
+
+p {
+	white-space: pre-wrap;
+	text-align: justify;
+}
+
+@page {
+  size: 5.5in 7in;
+  margin: 1in 0.5in;
+}
+
+@page:right {
+	@top-right {
+		content: counter(page);
+	}
+
+	@top-left {
+    content: string(doctitle);
+	}
+}
+
+@page:left {
+	@top-left {
+		content: counter(page);
+	}
+
+	@top-right {
+    content: string(doctitle);
+	}
+}
+
+h3 {
+	margin-top: 0;
+	page-break-before: always;
+  string-set: doctitle content(); 
+}
+
+.footnote {
+	float: footnote;
+}

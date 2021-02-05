@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Siddur</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<style id="customized-styles"></style>
+	<div class="book-container">
+		<div class="loader"></div>
+		<div class="book-content"></div>
+		<div class="book-preview"></div>
+		<div class="book-sections">
+			<div class="book-controls">
+				<button class="book-control-btn btn" id="book-control-prev">Previous</button>
+				<button class="book-control-btn btn" id="book-control-next">Next</button>
+			</div>
+		</div>
+	</div>
+	<div class="text-controls-container">
+		<label class="bold-toggle">
+			<span>B</span>
+			<input type="checkbox" id="book-control-bold" />
+		</label>
+		<input type="number" min="4" max="50" id="book-control-font-size" />
+		<button class="book-control-btn btn" id="book-control-footnotes"><span>Toggle</span> Footnotes</button>
+	</div>
+	<script>
+		window.PagedConfig = {
+		  auto: false
+		};
+	</script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+	<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>	
+	<script type="text/javascript" src="./db.js"></script>
+	<script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
